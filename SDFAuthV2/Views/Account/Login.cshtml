@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+@model SDFAuth2.Models.LoginModel
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>SimpleAdmin - Login to CMS</title>
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="~/Content/login.css">
+    <link rel="stylesheet" href="~/Content/Validation.css">
+	<!-- Optimize for mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+</head>
+<body>
+
+	<!-- TOP BAR -->
+	<div id="top-bar">
+		
+		<div class="page-full-width">
+		
+			<a href="#" class="round button dark ic-left-arrow image-left ">Return to website</a>
+
+		</div> <!-- end full-width -->	
+	
+	</div> <!-- end top-bar -->
+	
+	
+	
+	<!-- HEADER -->
+	<div id="header">
+		
+		<div class="page-full-width cf">
+	
+			<div id="login-intro" class="fl">
+			
+				<h1>Login to CMS</h1>
+				<h5>Enter your credentials below</h5>
+			
+			</div> <!-- login-intro -->
+			
+			<!-- Change this image to your own company's logo -->
+			<!-- The logo will automatically be resized to 39px height. -->
+			<a href="#" id="company-branding" class="fr"><img src="/Images/login/company-logo.png" alt="Blue Hosting" /></a>
+			
+		</div> <!-- end full-width -->	
+
+	</div> <!-- end header -->
+	
+	
+	
+	<!-- MAIN CONTENT -->
+	<div id="content">
+	
+	    <form action="@Url.Action("Login") " method="POST" id="login-form">
+        
+            <fieldset>
+
+                <p>
+                    <label for="login-username">@Html.LabelFor(m => m.UserName)</label>
+                    @Html.TextBoxFor(m => m.UserName, new {@class = "round full-width-input", id = "login-username"})
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </p>
+
+                <p>
+                    <label for="login-password">@Html.LabelFor(m => m.Password)</label>
+                    @Html.PasswordFor(m => m.Password, new {@class = "round full-width-input", id = "login-password"})
+                    @Html.ValidationMessageFor(m => m.Password)
+                </p>
+				
+                <p>I've <a href="#">forgotten my password</a>.</p>
+				
+                <input type="submit" class="button round blue image-right ic-right-arrow" value="登录" />
+            </fieldset>
+
+            <br/>
+            <div class="information-box round">Just click on the "LOG IN" button to continue, no login information required.</div>
+            </form>
+        
+	</div> <!-- end content -->
+	
+	
+	
+	<!-- FOOTER -->
+	<div id="footer">
+
+		<p>&copy; Copyright 2012 <a href="#">BlueHosting, LLC</a>. All rights reserved.</p>
+		<p><strong>SimpleAdmin</strong> theme by <a href="http://www.adipurdila.com">Adi Purdila</a></p>
+	
+	</div> <!-- end footer -->
+
+</body>
+</html>

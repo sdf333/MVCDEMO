@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="49ac69fe3eea48fd96ade7150936ded3" Name="关系图1" ZoomLevel="55">
+        <EntityTypeShape EntityType="SDFAuthModel.application" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SDFAuthModel.S_City" Width="1.5" PointX="9.8819255446465331" PointY="3.7223471122432255" />
+        <EntityTypeShape EntityType="SDFAuthModel.S_District" Width="1.5" PointX="11.876475786732732" PointY="13.785058787923799" />
+        <EntityTypeShape EntityType="SDFAuthModel.S_Province" Width="1.5" PointX="9.0254047871685614" PointY="27.625320864666868" />
+        <EntityTypeShape EntityType="SDFAuthModel.UserCity" Width="1.5" PointX="3.6618818806772504" PointY="7.9791290797196" />
+        <AssociationConnector Association="SDFAuthModel.FK_USERCITY_FK_USERCI_S_CITY" />
+        <AssociationConnector Association="SDFAuthModel.FK_USERCITY_FK_USERCI_S_DISTRI" />
+        <AssociationConnector Association="SDFAuthModel.FK_USERCITY_FK_USERCI_S_PROVIN" />
+        <EntityTypeShape EntityType="SDFAuthModel.user" Width="1.5" PointX="11.903208754911651" PointY="4.6713835916814315" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
