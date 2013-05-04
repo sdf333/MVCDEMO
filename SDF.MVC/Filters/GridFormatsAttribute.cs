@@ -67,6 +67,13 @@ namespace SDF.MVC.Filters
         //        jsonNetResult.Data = rtn;
         //    }
         //}
+
+        public override void OnActionExecuted(ActionExecutedContext filterContext)
+        {
+            var request = filterContext.HttpContext.Request;
+            
+      
+        }
     }
 
     public  enum  GridType

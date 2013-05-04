@@ -40,22 +40,20 @@ namespace CoreTest
 
 
 
-        [TestMethod]
-        public void PageTest1()
-        {
-            var controller = SDFEngine.Container.Resolve<GridController>();
-            var result = controller.List(1, 10);
-            Mock<ControllerContext> controllerContext = new Mock<ControllerContext>();     
-            var response = new Mock<HttpResponseBase>();  
-             var sb = new StringBuilder();
-             var stringWriter = new StringWriter();
+        //[TestMethod]
+        //public void PageTest1()
+        //{
+        //    var controller = SDFEngine.Container.Resolve<GridController>();
+        //    var result = controller.List(1, 10);
+        //    Mock<ControllerContext> controllerContext = new Mock<ControllerContext>();     
+        //    var response = new Mock<HttpResponseBase>();  
+        //     var sb = new StringBuilder();
+        //     var stringWriter = new StringWriter();
 
-             response.Setup(x => x.Output).Returns(stringWriter);
-            controllerContext.Setup(x => x.HttpContext.Response).Returns(response.Object);
-
-            result.ExecuteResult(controllerContext.Object);
-
-            var rtn = stringWriter.ToString();
-        }
+        //     response.Setup(x => x.Output).Returns(stringWriter);
+        //    controllerContext.Setup(x => x.HttpContext.Response).Returns(response.Object);
+        //    result.ExecuteResult(controllerContext.Object);
+        //    var rtn = stringWriter.ToString();
+        //}
     }
 }

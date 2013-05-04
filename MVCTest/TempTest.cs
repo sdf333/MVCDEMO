@@ -7,6 +7,7 @@ using DB.SDFAuth;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nop.Services.Blogs;
 using SDF.Core;
+using System.Linq;
 using SDF.Core.Infrastructure;
 using Autofac;
 using SDFAuthV2.Controllers;
@@ -25,12 +26,7 @@ namespace CoreTest
         [TestMethod]
         public void Test1()
         {
-            var controller = SDFEngine.Container.Resolve<GridController>();
-            var rtn = controller.List(1,10);
-            object o = rtn.Data;
-            var o2 = o as IPagedList<S_City>;
-            
-            Assert.IsNull(o2);
+       
         }
 
        

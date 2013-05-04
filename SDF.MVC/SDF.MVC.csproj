@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionResults\JsonpActionResult.cs" />
+    <Compile Include="ActionResults\PageListResult.cs" />
     <Compile Include="ActionResult\JsonNetResult.cs" />
     <Compile Include="BaseController.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs" />

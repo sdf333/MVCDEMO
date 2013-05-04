@@ -337,7 +337,6 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_MINIPROFILER UPDATED Layout.cshtml" />
     <Content Include="Views\Grid\JdGrid.cshtml" />
-    <Content Include="Views\Grid\Grid2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -24,6 +24,11 @@ namespace SDF.Core
     /// <typeparam name="T">T</typeparam>
     public class PagedList<T> : List<T>, IPagedList<T>
     {
+        private PagedList()
+        {
+            
+        }
+
         /// <summary>
         /// Ctor
         /// </summary>
@@ -83,6 +88,26 @@ namespace SDF.Core
             this.AddRange(source);
         }
 
+
+
+        //public static PagedList<T2> Mapper<T,T2>(PagedList<T> source, IEnumerable<object> dest)
+        //{
+        //    var p = new PagedList<T>(dest, source);
+        //}
+        public PagedList<T2> MapperTo<T2>(Func<T, T2> selector)
+        {
+            var p = new PagedList<T2>();
+            p.TotalCount = this.TotalCount;
+            p.TotalPages = this.TotalPages;
+            p.PageSize = this.PageSize;
+            p.PageIndex = this.PageIndex;
+
+            
+            p.AddRange(this.Select(selector));
+            return p;
+        }
+
+        
         public int PageIndex { get; private set; }
         public int PageSize { get; private set; }
         public int TotalCount { get; private set; }
@@ -96,5 +121,7 @@ namespace SDF.Core
         {
             get { return (PageIndex + 1 < TotalPages); }
         }
+
+       
     }
 }

@@ -30,18 +30,13 @@ namespace SDFAuthV2.Controllers
             return View();
         }
 
-        //[GridFormats]
-        public JsonNetResult List(int page, int rows)
+        [GridFormats]
+        public IEnumerable<object> List(int page, int rows)
         {
-            var list = _cityService.GetCityList(page, rows);
 
-            var model = new JqGridModel();
-            model.PageIndex = list.PageIndex;
-            model.TotalPages = list.TotalPages;
-            model.TotalCount = list.TotalCount;
-            model.List = list.Select(_ => new { id = _.CityID, ZipCode = _.ZipCode });
-            
-            return  this.JsonNet(model, JsonRequestBehavior.AllowGet);
+            var list = _cityService.GetCityList(page, rows);
+            var result2 = list.MapperTo(_ => new { id = _.CityID, ZipCode = _.ZipCode });
+            return result2;
         }
 
     }
