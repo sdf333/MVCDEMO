@@ -1,0 +1,13 @@
+﻿CREATE TABLE [dbo].[UserCity] (
+    [id]         INT    IDENTITY (1, 1) NOT NULL,
+    [UserId]     INT    NOT NULL,
+    [ProvinceID] BIGINT NOT NULL,
+    [DistrictID] BIGINT NOT NULL,
+    [CityID]     BIGINT NOT NULL,
+    CONSTRAINT [PK_UserCIty] PRIMARY KEY CLUSTERED ([id] ASC),
+    CONSTRAINT [FK_USERCITY_FK_USERCI_S_CITY] FOREIGN KEY ([CityID]) REFERENCES [dbo].[S_City] ([CityID]),
+    CONSTRAINT [FK_USERCITY_FK_USERCI_S_DISTRI] FOREIGN KEY ([DistrictID]) REFERENCES [dbo].[S_District] ([DistrictID]),
+    CONSTRAINT [FK_USERCITY_FK_USERCI_S_PROVIN] FOREIGN KEY ([ProvinceID]) REFERENCES [dbo].[S_Province] ([ProvinceID]),
+    CONSTRAINT [UK_UserCity_UserId] UNIQUE NONCLUSTERED ([UserId] ASC)
+);
+
