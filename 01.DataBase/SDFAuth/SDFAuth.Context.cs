@@ -26,6 +26,12 @@ namespace DB.SDFAuth
         {
     		Database.SetInitializer<SDFAuthEntities>(null);
         }
+
+        public SDFAuthEntities(string conn)
+            : base(conn)
+        {
+            Database.SetInitializer<SDFAuthEntities>(null);
+        }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

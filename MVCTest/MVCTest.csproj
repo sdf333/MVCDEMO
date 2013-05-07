@@ -40,6 +40,10 @@
     <Reference Include="Autofac.Integration.Mvc">
       <HintPath>..\packages\Autofac.Mvc4.3.0.0\lib\net40\Autofac.Integration.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack">
       <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.dll</HintPath>
     </Reference>
@@ -83,7 +87,7 @@
     <Compile Include="ViewTest.cs" />
     <Compile Include="WCFClientTest.cs" />
     <Compile Include="ServiceTest.cs" />
-    <Compile Include="TempTest.cs" />
+    <Compile Include="DataTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\01.DataBase\SDFAuth\DB.SDFAuth.csproj">
@@ -106,6 +110,10 @@
       <Project>{28926067-87C8-4516-A564-8BBCA317F8C7}</Project>
       <Name>SDF.MVC</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SDFAuth.Data\SDFAuth.Data.csproj">
+      <Project>{ED4D4132-2D8E-4648-8CC8-07087ED0ECF7}</Project>
+      <Name>SDFAuth.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SDFAuth.Services\SDFAuth.Services.csproj">
       <Project>{5cb93dbc-3989-4222-9656-4e99fafc9096}</Project>
       <Name>SDFAuth.Services</Name>
@@ -120,7 +128,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

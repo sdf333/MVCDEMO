@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>SQLServer.SDFAuth</Name>
+    <Name>DB.SDFAuth</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{5f8bbb59-9d86-4d3e-8f6b-a6c7075e768d}</ProjectGuid>
+    <ProjectGuid>{6fc4aec3-b14b-445e-9f97-93c943f4db37}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>SQLServer.SDFAuth</RootNamespace>
-    <AssemblyName>SQLServer.SDFAuth</AssemblyName>
+    <RootNamespace>DB.SDFAuth</RootNamespace>
+    <AssemblyName>DB.SDFAuth</AssemblyName>
     <ModelCollation>2052,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -71,6 +71,5 @@
     <Build Include="dbo\Tables\UserCity.sql" />
     <Build Include="dbo\Tables\application.sql" />
     <Build Include="dbo\Stored Procedures\GetUserList.sql" />
-    <Build Include="dbo\Tables\Table1.sql" />
   </ItemGroup>
 </Project>

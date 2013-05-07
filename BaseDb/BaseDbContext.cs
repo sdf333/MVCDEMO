@@ -17,6 +17,12 @@ namespace DataBase
         private static readonly Dictionary<ConnectionStringSettings, string> connMap =
             new Dictionary<ConnectionStringSettings, string>();
 
+        protected BaseDbContext(string connectstring)
+            : base(connectstring)
+        {
+
+        }
+
         protected BaseDbContext(ConnectionStringSettings connsetting)
             : base(GetEntityConnString(connsetting))
         {
