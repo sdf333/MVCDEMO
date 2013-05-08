@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Data.Entity;
 using System.Data.EntityClient;
@@ -29,6 +30,7 @@ namespace DataBase
 
         }
 
+        [MethodImpl(MethodImplOptions.Synchronized)]
         protected static string GetEntityConnString(ConnectionStringSettings connsetting)
         {
             if (connMap.ContainsKey(connsetting))

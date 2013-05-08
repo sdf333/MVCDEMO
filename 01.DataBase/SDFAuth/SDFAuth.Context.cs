@@ -27,8 +27,8 @@ namespace DB.SDFAuth
     		Database.SetInitializer<SDFAuthEntities>(null);
         }
 
-        public SDFAuthEntities(string conn)
-            : base(conn)
+        public SDFAuthEntities(string nameorconnectionstr)
+            : base(nameorconnectionstr)
         {
             Database.SetInitializer<SDFAuthEntities>(null);
         }

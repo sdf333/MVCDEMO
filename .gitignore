@@ -28,3 +28,4 @@ _ReSharper*/
 *.vssscc
 $tf*/
 00.DOC/SQLServer.SDFAuth/SQLServer.SDFAuth.dbmdl
+00.DOC/DB.SDFAuth/DB.SDFAuth.dbmdl

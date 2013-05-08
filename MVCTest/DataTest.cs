@@ -17,23 +17,15 @@ namespace CoreTest
     [TestClass]
     public class DataTest
     {
-        protected SDFAuthEntities context;
 
         [TestInitialize()]
         public void Initialize()
         {
-            Database.DefaultConnectionFactory = new SqlCeConnectionFactory("System.Data.SqlServerCe.4.0");
-            context = new SDFAuthEntities();
+            SDFEngine.Initialize();
+            var context = SDFEngine.Container.Resolve<SDFAuthEntities>();
             context.Database.Delete();
             context.Database.Create();
-            //SDFEngine.Initialize();
         }
-
-        protected string GetTestDbName()
-        {
-            string testDbName = "Data Source=" + (System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)) + @"\\Data.Tests.Db.sdf;Persist Security Info=False";
-            return testDbName;
-        }        
 
         [TestMethod]
         public void Test1()
