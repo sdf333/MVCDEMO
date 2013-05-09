@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC713FD9-B98E-4073-87F8-312D4E192895}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MVCTest</RootNamespace>
+    <AssemblyName>MVCTest</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.0.1\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration">
+      <HintPath>..\packages\Autofac.3.0.1\lib\net40\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\packages\Autofac.Mvc4.3.0.0\lib\net40\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SHDocVw">
+      <HintPath>..\packages\WatiN.2.1.0\lib\net40\Interop.SHDocVw.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <Private>True</Private>
+      <HintPath>..\packages\WatiN.2.1.0\lib\net40\Microsoft.mshtml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorGenerator.Testing">
+      <HintPath>..\packages\RazorGenerator.Testing.2.0.0\lib\net40\RazorGenerator.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="ReflectionMagic">
+      <HintPath>..\packages\ReflectionMagic.2.0.0\lib\net40\ReflectionMagic.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MVC\JsonNetResultTest.cs" />
+    <Compile Include="MVC\PagedResultTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MVC\MVCTest.cs" />
+    <Compile Include="ViewTest.cs" />
+    <Compile Include="WCFClientTest.cs" />
+    <Compile Include="ServiceTest.cs" />
+    <Compile Include="DataTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\01.DataBase\SDFAuth\DB.SDFAuth.csproj">
+      <Project>{4b38903a-f2c7-4d80-ac3d-309921ed9d20}</Project>
+      <Name>DB.SDFAuth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BaseDb\DataBase.csproj">
+      <Project>{dd881003-7e4b-4ea5-acf2-92709c942fc7}</Project>
+      <Name>DataBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contract\Contract.csproj">
+      <Project>{52D29985-9364-4DB0-BDC0-57114B78CB49}</Project>
+      <Name>Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\Core.csproj">
+      <Project>{201d9889-7ae9-4309-bf0e-3f0641765687}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SDF.MVC\SDF.MVC.csproj">
+      <Project>{28926067-87C8-4516-A564-8BBCA317F8C7}</Project>
+      <Name>SDF.MVC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SDFAuth.Data\SDFAuth.Data.csproj">
+      <Project>{ED4D4132-2D8E-4648-8CC8-07087ED0ECF7}</Project>
+      <Name>SDFAuth.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SDFAuth.Services\SDFAuth.Services.csproj">
+      <Project>{5cb93dbc-3989-4222-9656-4e99fafc9096}</Project>
+      <Name>SDFAuth.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SDFAuthV2.Framework\SDFAuthV2.Framework.csproj">
+      <Project>{bc6487ce-8fc2-4492-b10d-1452be9026aa}</Project>
+      <Name>SDFAuthV2.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SDFAuthV2\SDFAuthV2.csproj">
+      <Project>{6f50cf1a-505a-498f-a5b3-5e9fd7503251}</Project>
+      <Name>SDFAuthV2</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
