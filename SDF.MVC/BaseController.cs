@@ -16,9 +16,6 @@ namespace SDFAuthV2.Framework
 
     public class BaseController : Controller
     {
-        
-
-
 
     }
 }
