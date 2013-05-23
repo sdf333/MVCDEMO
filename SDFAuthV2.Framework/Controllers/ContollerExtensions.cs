@@ -1,9 +1,5 @@
 ﻿using System.IO;
 using System.Web.Mvc;
-using Nop.Core;
-using Nop.Core.Domain.Customers;
-using Nop.Services.Common;
-using Nop.Services.Stores;
 
 namespace Nop.Web.Framework.Controllers
 {
@@ -62,23 +58,5 @@ namespace Nop.Web.Framework.Controllers
             }
         }
 
-        /// <summary>
-        /// Get active store scope (for multi-store configuration mode)
-        /// </summary>
-        /// <param name="controller">Controller</param>
-        /// <param name="storeService">Store service</param>
-        /// <param name="workContext">Work context</param>
-        /// <returns>Store ID; 0 if we are in a shared mode</returns>
-        public static int GetActiveStoreScopeConfiguration(this Controller controller, IStoreService storeService, IWorkContext workContext)
-        {
-            //ensure that we have 2 (or more) stores
-            if (storeService.GetAllStores().Count < 2)
-                return 0;
-
-
-            var storeId = workContext.CurrentCustomer.GetAttribute<int>(SystemCustomerAttributeNames.AdminAreaStoreScopeConfiguration);
-            var store = storeService.GetStoreById(storeId);
-            return store != null ? store.Id : 0;
-        }
     }
 }

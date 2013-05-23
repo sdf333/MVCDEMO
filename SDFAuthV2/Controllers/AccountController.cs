@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
+using Core;
 using Nop.Services.Blogs;
 using SDFAuth2.Models;
 using SDFAuthV2.Framework;
@@ -17,12 +18,15 @@ namespace SDFAuthV2.Controllers
 
         public AccountController(IUserService userService)
         {
+            
             _userService = userService;
         }
 
         [HttpGet]
         public ActionResult Login()
         {
+            //var log = LogHelper.GetInstance();
+            //log.Error(DateTime.Now.ToString() + "|| AccountController");
             return View();
         }
 

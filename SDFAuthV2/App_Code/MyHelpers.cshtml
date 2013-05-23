@@ -1,0 +1,12 @@
+﻿@using SDFAuth2.Models
+@helper GetUserList(List<LoginModel> list){
+    <ul>
+        @foreach (var user in list)
+        {
+            <li>
+                @user.Password
+            </li>
+        }
+    </ul>
+}
+@*页面中调用@Myhelpers.GetUserLis(list) *@
