@@ -16,5 +16,6 @@ namespace Nop.Services.Blogs
 
         bool Exist(user u);
         bool ExistUser(string user);
+        user GetUserInfo(string user);
     }
 }

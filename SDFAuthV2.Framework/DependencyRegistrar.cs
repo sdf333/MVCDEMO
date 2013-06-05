@@ -12,12 +12,14 @@ using Autofac.Integration.Mvc;
 using Autofac.Integration.Wcf;
 using Contract;
 using DataBase;
+using Nop.Services.Authentication;
 using SDF.Core.Caching;
 using SDF.Core.Fakes;
 using SDF.Core.Infrastructure;
 using SDF.Core.Infrastructure.DependencyManagement;
 using SDFAuth.Data;
 using SDFAuth.Services;
+using SDFAuth.Services.Authentication;
 
 //using SDF.Core.Plugins;
 //using SDF.Data;
@@ -92,9 +94,11 @@ namespace SDFAuthV2.Framework
             //services
             var services = typeFinder.FindClassesOfType<BaseService>().ToList();
             services.ForEach(s => builder.RegisterType(s).AsImplementedInterfaces().InstancePerHttpRequest().PropertiesAutowired());
+
+
+            builder.RegisterFilterProvider();
             
-
-
+            builder.RegisterType<FormsAuthenticationService>().As<IAuthenticationService>().InstancePerHttpRequest();
             //builder.RegisterType<BackInStockSubscriptionService>().As<IBackInStockSubscriptionService>().InstancePerHttpRequest();
             //builder.RegisterType<CategoryService>().As<ICategoryService>().InstancePerHttpRequest();
             //builder.RegisterType<CompareProductsService>().As<ICompareProductsService>().InstancePerHttpRequest();

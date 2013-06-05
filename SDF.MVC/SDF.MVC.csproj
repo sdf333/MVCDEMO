@@ -64,6 +64,10 @@
       <Project>{201D9889-7AE9-4309-BF0E-3F0641765687}</Project>
       <Name>Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SDFAuthV2.Framework\SDFAuthV2.Framework.csproj">
+      <Project>{BC6487CE-8FC2-4492-B10D-1452BE9026AA}</Project>
+      <Name>SDFAuthV2.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

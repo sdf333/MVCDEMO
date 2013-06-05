@@ -1,0 +1,15 @@
+﻿@model SDFAuthV2.Models.ErrorModel
+@{
+    Layout = null;
+    ViewBag.Title = Model.Heading;
+}
+<html>
+    <head>
+        
+    </head>
+    <body>
+            <h1>@Model.Heading</h1>
+    <p>@Model.Message</p>
+    <p>@Html.ActionLink("Continue »", "Index", "Home")</p>        
+    </body>
+</html>

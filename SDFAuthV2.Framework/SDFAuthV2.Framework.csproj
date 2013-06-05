@@ -58,7 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AdminAuthorizeAttribute.cs" />
+    <Compile Include="MyAuthorizeAttribute.cs" />
     <Compile Include="Controllers\ContollerExtensions.cs" />
     <Compile Include="Controllers\FormValueRequiredAttribute.cs" />
     <Compile Include="Controllers\ParameterBasedOnFormNameAndValueAttribute.cs" />
@@ -71,6 +71,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\01.DataBase\SDFAuth\DB.SDFAuth.csproj">
+      <Project>{4B38903A-F2C7-4D80-AC3D-309921ED9D20}</Project>
+      <Name>DB.SDFAuth %2801.DataBase\DB.SDFAuth%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BaseDb\DataBase.csproj">
       <Project>{dd881003-7e4b-4ea5-acf2-92709c942fc7}</Project>
       <Name>DataBase</Name>

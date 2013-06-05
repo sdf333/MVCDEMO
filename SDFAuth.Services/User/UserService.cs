@@ -50,5 +50,10 @@ namespace Nop.Services.Blogs
             var count = _userRepository.Table.Count(u => u.userName == user);
             return count > 0;
         }
+
+        public user GetUserInfo(string user)
+        {
+            return _userRepository.Table.SingleOrDefault(_ => _.userName == user);
+        }
     }
 }

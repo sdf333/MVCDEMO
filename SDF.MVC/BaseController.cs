@@ -13,7 +13,7 @@ using SDF.MVC.ActionResult;
 
 namespace SDFAuthV2.Framework
 {
-
+    [MyAuthorize]
     public class BaseController : Controller
     {
 

@@ -7,7 +7,10 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Autofac;
+using SDF.Core;
 using SDF.Core.Infrastructure;
+using SDFAuthV2.Controllers;
 using log4net.Config;
 
 namespace SDFAuthV2
@@ -29,6 +32,43 @@ namespace SDFAuthV2
             
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new RazorViewEngine());
+        }
+
+        protected void Application_Error()
+        {
+            if (HttpContext.Current == null)
+            {
+                // errors in Application_Start will end up here           
+
+                return;
+            }
+
+            if (HttpContext.Current.IsCustomErrorEnabled)
+            {
+                return;
+            }
+            var exception = Server.GetLastError();
+
+            
+            var httpException = new HttpException(null, exception);
+            if (httpException.GetHttpCode() == 404 && WebHelper.IsStaticResource(this.Request))
+            {
+                return;
+            }
+
+            //TODO: 记录Log（忽略404，403） 
+            var routeData = new RouteData();
+            routeData.Values.Add("controller", "Error");
+            routeData.Values.Add("action", "Index");
+            routeData.Values.Add("httpException", httpException);
+
+            Server.ClearError();
+
+            // Call target Controller and pass the routeData.
+            //Ref nop&nblog
+            IController errorController = SDFEngine.Container.Resolve<ErrorController>();
+
+            errorController.Execute(new RequestContext(new HttpContextWrapper(Context), routeData));
         }
     }
 }
